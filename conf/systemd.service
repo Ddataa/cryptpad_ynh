@@ -1,16 +1,19 @@
 [Unit]
-Description=Zero Knowledge realtime collaborative editor.
+Description=CryptPad: Realtime collaborative editor.
 After=syslog.target network.target
 
 [Service]
 Type=simple
 User=__APP__
 Group=__APP__
-WorkingDirectory=__FINALPATH__
+WorkingDirectory=__FINALPATH__/
 Environment=PATH=__ENV_PATH__
 Environment=NODE_ENV=production
-ExecStart=__YNH_NPM__ start
+Environment='PWD="__FINALPATH__/cryptpad"'
+ExecStart=__YNH_NPM__ __FINALPATH__/server.js
 Restart=always
+RestartSec=2
+LimitNOFILE=1000000
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these 
@@ -41,7 +44,6 @@ CapabilityBoundingSet=~CAP_SYS_TTY_CONFIG
 CapabilityBoundingSet=~CAP_MAC_ADMIN CAP_MAC_OVERRIDE
 CapabilityBoundingSet=~CAP_NET_ADMIN CAP_NET_BROADCAST CAP_NET_RAW
 CapabilityBoundingSet=~CAP_SYS_ADMIN CAP_SYS_PTRACE CAP_SYSLOG 
-
 
 [Install]
 WantedBy=multi-user.target

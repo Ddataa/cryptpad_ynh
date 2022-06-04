@@ -118,10 +118,10 @@ ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
 ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=60
 
 pushd "$final_path" 
+	ynh_exec_warn_less npm install npm@latest --location=global
+	ynh_exec_warn_less npm install bower --location=global
 	ynh_exec_warn_less npm install --allow-root
-	ynh_exec_warn_less npm install -g bower
-	ynh_exec_warn_less bower update --allow-root
-	ynh_exec_warn_less npm i
+	ynh_exec_warn_less bower install --allow-root
 popd
 
 #=================================================
