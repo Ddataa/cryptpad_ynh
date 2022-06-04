@@ -72,7 +72,7 @@ module.exports = {
  *
  *  CUSTOMIZE AND UNCOMMENT THIS FOR PRODUCTION INSTALLATIONS.
  */
-    // httpSafeOrigin: "https://some-other-domain.xyz",
+    httpSafeOrigin: "https://__SANDBOX_DOMAIN__",
 
 /*  httpAddress specifies the address on which the nodejs server
  *  should be accessible. By default it will listen on 127.0.0.1
@@ -233,7 +233,7 @@ module.exports = {
      *  Specify a directory where files should be stored.
      *  It will be created automatically if it does not already exist.
      */
-    filePath: './datastore/',
+    filePath: '__DATADIR__/',
 
     /*  CryptPad offers the ability to archive data for a configurable period
      *  before deleting it, allowing a means of recovering data in the event

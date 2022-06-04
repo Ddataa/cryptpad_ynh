@@ -39,6 +39,14 @@
                 }
             },
             {
+                "name": "sandbox_domain",
+                "type": "domain",
+                "help": {
+                    "en": "CryptPad needs sandboxing domain to improve security.",
+                    "fr": "CryptPad a besoin d'un domaine de sandboxing pour améliorer la sécurité"
+                }
+            },
+            {
                 "name": "is_public",
                 "type": "boolean",
                 "help": {
