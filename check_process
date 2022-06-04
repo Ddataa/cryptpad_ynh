@@ -1,4 +1,6 @@
 ;; Test complet
+	; pre-install
+		sudo yunohost domain add sandbox.domain.tld
 	; Manifest
 		domain="domain.tld"
 		sandbox_domain="sandbox.domain.tld"
